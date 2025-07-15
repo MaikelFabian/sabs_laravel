@@ -12,6 +12,7 @@ use App\Http\Controllers\PermisoController;
 use App\Http\Controllers\TituladoController;
 use App\Http\Controllers\SitioController;
 use App\Http\Controllers\AreacentroController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\TipomaterialController;
 use App\Http\Controllers\CategoriamaterialController;
@@ -26,7 +27,17 @@ use App\Http\Controllers\DetallesController;
 
 use Illuminate\Support\Facades\Route;
 
-Route::apiResource('modulos', ModuloController::class);
+
+Route::post('register', [AuthController::class, 'register'])
+    ->name('auth.register');
+Route::post('login', [AuthController::class, 'login'])
+    ->name('auth.login');
+
+//Route::middleware(['auth:api'])->group(function () {
+//Route::get('/user', [AuthController::class, 'getUser']);
+//Route::post('/logout', [AuthController::class, 'logout']);
+Route::middleware(['auth:api'])->group(function () {
+
 Route::apiResource('municipios', MunicipioController::class);
 Route::apiResource('areas', AreaController::class);
 Route::apiResource('fichas', FichaController::class);
@@ -48,3 +59,4 @@ Route::apiResource('tipomovimientos', TipomovimientoController::class);
 Route::apiResource('movimientos', MovimientoController::class);
 Route::apiResource('sedes', SedeController::class);
 Route::apiResource('detalles', DetallesController::class);
+});

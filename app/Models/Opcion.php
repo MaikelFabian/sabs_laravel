@@ -11,11 +11,6 @@ class Opcion extends Model
     protected $table = 'opciones';
     protected $fillable = ['nombre_opcion', 'descripcion', 'ruta_frontend', 'id_modulo'];
 
-    public function modulo(): BelongsTo
-    {
-        return $this->belongsTo(Modulo::class, 'id_modulo');
-    }
-
     public function permisos(): HasMany
     {
         return $this->hasMany(Permiso::class, 'opcion_id');

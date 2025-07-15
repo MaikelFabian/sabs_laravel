@@ -17,7 +17,6 @@ return new class extends Migration
             $table->text('descripcion')->nullable();
             $table->string('ruta_frontend', 150);
             $table->unsignedBigInteger('id_modulo');
-            $table->foreign('id_modulo')->references('id')->on('modulos')->onDelete('cascade');
             $table->timestamps();
         });
     }

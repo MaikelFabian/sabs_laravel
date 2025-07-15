@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('personas', function (Blueprint $table) {
             $table->id('idpersona');
-            $table->text('identificacion')->unique();
+            $table->unsignedBigInteger('identificacion')->unique();
             $table->text('nombre');
             $table->text('apellido');
             $table->text('telefono')->nullable();
-            $table->text('correo')->unique();
+            $table->text('correo');
             $table->text('contrasena');
             $table->integer('edad');
             $table->boolean('activo')->nullable()->default(true);

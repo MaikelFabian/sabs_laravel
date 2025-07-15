@@ -2,16 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Persona extends Model
+class Persona extends Authenticatable implements JWTSubject
 {
     protected $table = 'personas';
     protected $primaryKey = 'idpersona';
     public $timestamps = true;
-    protected $fillable = ['identificacion', 'nombre', 'apellido', 'telefono', 'correo', 'contrasena', 'edad', 'activo', 'fecha_creacion', 'fecha_actualizacion', 'ficha', 'rol'];
+
+    protected $fillable = [
+        'identificacion', 'nombre', 'apellido', 'telefono', 
+        'correo', 'contrasena', 'edad', 'activo', 
+        'fecha_creacion', 'fecha_actualizacion', 'ficha', 'rol'
+    ];
 
     protected $casts = [
         'activo' => 'boolean',
@@ -48,5 +54,20 @@ class Persona extends Model
     public function rol(): BelongsTo
     {
         return $this->belongsTo(Rol::class, 'rol', 'idrol');
+    }
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+
+    public function getAuthPassword()
+    {
+        return $this->contrasena;
     }
 }

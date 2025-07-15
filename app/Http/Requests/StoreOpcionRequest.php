@@ -17,7 +17,6 @@ class StoreOpcionRequest extends FormRequest
             'nombre_opcion' => 'required|string|max:100',
             'descripcion' => 'nullable|string',
             'ruta_frontend' => 'required|string|max:150',
-            'id_modulo' => 'required|exists:modulos,id',
         ];
     }
 
@@ -31,8 +30,6 @@ class StoreOpcionRequest extends FormRequest
             'ruta_frontend.required' => 'La ruta frontend es obligatoria.',
             'ruta_frontend.string' => 'La ruta debe ser texto.',
             'ruta_frontend.max' => 'Máximo 150 caracteres.',
-            'id_modulo.required' => 'El ID del módulo es obligatorio.',
-            'id_modulo.exists' => 'El módulo seleccionado no existe.',
         ];
     }
 }
