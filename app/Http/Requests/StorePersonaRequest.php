@@ -22,8 +22,8 @@ class StorePersonaRequest extends FormRequest
             'contrasena' => 'required|string|min:6',
             'edad' => 'required|integer|min:0',
             'activo' => 'boolean|nullable',
-            'ficha' => 'required|exists:fichas,idficha',
-            'rol' => 'required|exists:roles,idrol',
+            'ficha' => 'nullable|exists:fichas,idficha',
+            'rol' => 'nullable|exists:roles,idrol',
         ];
     }
 

@@ -17,7 +17,7 @@ class AuthController extends Controller
 {
     
 
-    public function register(RegisterRequest $request):JsonResponse
+ /*   public function register(RegisterRequest $request):JsonResponse
     {
         $data = $request->validated();
         // Aquí puedes crear el usuario con los datos validados
@@ -39,7 +39,7 @@ class AuthController extends Controller
                 'message'   =>  'Error al crear el usuario',
             ], Response::HTTP_INTERNAL_SERVER_ERROR);
         };
-    }
+    }*/
     public function login(Request $request): JsonResponse
     {
         $credentials = $request->validate([

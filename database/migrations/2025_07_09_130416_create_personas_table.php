@@ -23,9 +23,9 @@ return new class extends Migration
             $table->boolean('activo')->nullable()->default(true);
             $table->timestamp('fecha_creacion')->nullable()->useCurrent();
             $table->timestamp('fecha_actualizacion')->nullable();
-            $table->unsignedBigInteger('ficha');
+            $table->unsignedBigInteger('ficha')->nullable();;
             $table->foreign('ficha')->references('idficha')->on('fichas')->onDelete('cascade');
-            $table->unsignedBigInteger('rol');
+            $table->unsignedBigInteger('rol')->nullable();
             $table->foreign('rol')->references('idrol')->on('roles')->onDelete('cascade');
             $table->timestamps();
         });
