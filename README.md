@@ -91,8 +91,8 @@ php artisan migrate --seed
 
 | Campo      | Valor                                          |
 | ---------- | ---------------------------------------------- |
-| Correo     | [admin@dominio.com](mailto\:admin@dominio.com) |
-| Contraseña | admin123                                       |
+| Correo     | [carlos@dominio.com](mailto\:carlos@dominio.com) |
+| Contraseña | carlos1234                                      |
 
 Usa este usuario para iniciar sesión, obtener un token y empezar a registrar o consultar usuarios protegidos.
 
