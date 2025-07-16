@@ -105,8 +105,8 @@ Usa este usuario para iniciar sesión, obtener un token y empezar a registrar o 
 
 ```json
 {
-  "correo": "admin@dominio.com",
-  "password": "admin123"
+  "correo": "carlos@dominio.com",
+  "password": "carlos1234"
 }
 ```
 
