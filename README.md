@@ -147,11 +147,4 @@ Puedes registrar usuarios nuevos, consultar datos protegidos, etc.
 
 ---
 
-> 🛠 Si quieres, puedo añadir después pasos extra como:
->
-> - Proteger rutas con `auth:api`
-> - Crear más usuarios
-> - Configurar roles o permisos
->
-> 🚀 Solo dímelo y lo añado.
 
